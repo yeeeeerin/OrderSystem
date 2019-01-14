@@ -31,7 +31,7 @@ public class Product {
 
 
     @ManyToOne
-    @JoinColumn(name = "PRODUCT_TYPE_ID")
-    ProductType productType;
+    @JoinColumn(name = "CATEGORY_ID")
+    Category category;
 
 }

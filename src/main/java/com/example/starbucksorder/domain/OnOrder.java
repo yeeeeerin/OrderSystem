@@ -36,7 +36,4 @@ public class OnOrder {
     User user;
 
 
-
-
-
 }
