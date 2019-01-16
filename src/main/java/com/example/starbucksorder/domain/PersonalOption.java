@@ -14,7 +14,7 @@ public class PersonalOption {
     @Id
     Long id;
 
-    @Column
+    @Column(nullable = false)
     String name;
 
     @Column
