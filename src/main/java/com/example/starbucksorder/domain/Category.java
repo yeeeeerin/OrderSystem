@@ -16,7 +16,8 @@ public class Category {
     @Id
     Long id;
 
-    @Column
+
+    @Column(nullable = false)
     String name;
 
     @Enumerated(EnumType.STRING)
