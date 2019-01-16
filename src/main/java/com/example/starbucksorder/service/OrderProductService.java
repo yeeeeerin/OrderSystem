@@ -1,4 +1,4 @@
 package com.example.starbucksorder.service;
 
-public interface CartService {
+public interface OrderProductService {
 }

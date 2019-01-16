@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table
 @Data
-public class Cart {
+public class OrderProduct {
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "CART_SEQ_GENERATOR")
     @Id
@@ -21,4 +21,8 @@ public class Cart {
 
     @ManyToOne
     Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "OPTION_ID")
+    Option option;
 }
