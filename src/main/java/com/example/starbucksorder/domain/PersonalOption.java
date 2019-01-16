@@ -19,4 +19,8 @@ public class PersonalOption {
 
     @Column
     Integer count;
+
+    @ManyToOne
+    @JoinColumn(name = "OPTION_ID")
+    Option option;
 }

@@ -26,11 +26,6 @@ public class Product {
 
 
     @ManyToOne
-    @JoinColumn(name = "OPTION_ID")
-    Option option;
-
-
-    @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")
     Category category;
 

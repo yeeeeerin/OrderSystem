@@ -27,9 +27,4 @@ public class Option {
     CupSize cupSize;
 
 
-    @ManyToOne
-    @JoinColumn(name = "PERSONAL_OPTION_ID")
-    PersonalOption personalOption;
-
-
 }
