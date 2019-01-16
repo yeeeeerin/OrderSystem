@@ -11,6 +11,8 @@ public interface OptionService {
 
     void createOption(List<PersonalOption> personalOptions, Option option);
 
+    Option findOption(Long id);
+
     void removeOption(Long id);
 
 }

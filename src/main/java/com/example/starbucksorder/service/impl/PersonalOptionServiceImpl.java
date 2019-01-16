@@ -6,10 +6,13 @@ import com.example.starbucksorder.exception.coustomexception.AlreadyExistExcepti
 import com.example.starbucksorder.repository.PersonalOptionRepository;
 import com.example.starbucksorder.service.PersonalOptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class PersonalOptionServiceImpl implements PersonalOptionService {
 
 
@@ -20,6 +23,8 @@ public class PersonalOptionServiceImpl implements PersonalOptionService {
     public void addPersonalOption(List<PersonalOption> personalOptions, Option option) {
 
         for(PersonalOption p:personalOptions) {
+
+            /*
             Optional<PersonalOption> optionalPersonalOption =
                     personalOptionRepository.findByName(p.getName());
 
@@ -27,6 +32,7 @@ public class PersonalOptionServiceImpl implements PersonalOptionService {
                 throw new AlreadyExistException("이미 존재하는 퍼스널 옵션입니다.");
             }
 
+*/
             p.setOption(option);
 
             personalOptionRepository.save(p);

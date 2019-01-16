@@ -5,9 +5,12 @@ import com.example.starbucksorder.domain.PersonalOption;
 import com.example.starbucksorder.repository.OptionRepository;
 import com.example.starbucksorder.service.OptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class OptionServiceImpl implements OptionService {
 
 
@@ -33,7 +36,7 @@ public class OptionServiceImpl implements OptionService {
     *
     * 옵션들의 총 금액을 계산
     * */
-    public Integer calAmount(List<PersonalOption> personalOptions){
+    private Integer calAmount(List<PersonalOption> personalOptions){
 
         Integer amount = 0;
 
@@ -42,6 +45,13 @@ public class OptionServiceImpl implements OptionService {
         }
 
         return amount;
+
+    }
+
+    @Override
+    public Option findOption(Long id){
+
+        return optionRepository.findById(id).get();
 
     }
 
