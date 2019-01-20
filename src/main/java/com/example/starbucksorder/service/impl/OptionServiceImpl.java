@@ -23,6 +23,9 @@ public class OptionServiceImpl implements OptionService {
     PersonalOptionServiceImpl personalOptionService;
 
 
+    /*
+    * 퍼스널 옵션과 옵션의 저장을 함께 수행
+    * */
     @Override
     public void createOption(List<PersonalOption> personalOptions,Option option) {
 

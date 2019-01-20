@@ -38,6 +38,8 @@ public class ServiceTest {
     @Autowired
     CategoryServiceImpl categoryService;
 
+
+
     @Test(expected = AlreadyExistException.class)
     public void productServiceEx(){
 

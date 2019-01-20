@@ -26,15 +26,6 @@ public class PersonalOptionServiceImpl implements PersonalOptionService {
 
         for(PersonalOption p:personalOptions) {
 
-            /*
-            Optional<PersonalOption> optionalPersonalOption =
-                    personalOptionRepository.findByName(p.getName());
-
-            if (!optionalPersonalOption.isEmpty()) {
-                throw new AlreadyExistException("이미 존재하는 퍼스널 옵션입니다.");
-            }
-
-*/
             p.setOption(option);
 
             personalOptionRepository.save(p);

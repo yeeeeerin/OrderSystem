@@ -19,14 +19,18 @@ public class OnOrder {
     @Enumerated(EnumType.STRING)
     OrderStatus orderStatus;
 
+    /*
     @Column
     String billingNo;
+    */
 
     @Column
     Integer price;
 
+    /*
     @Column
-    String pauAuthToken;
+    String payAuthToken;
+    */
 
     @CreatedDate
     @Column
