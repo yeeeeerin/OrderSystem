@@ -1,10 +1,16 @@
 package com.example.starbucksorder;
 
+import com.example.starbucksorder.domain.Category;
 import com.example.starbucksorder.domain.Option;
 import com.example.starbucksorder.domain.PersonalOption;
+import com.example.starbucksorder.domain.Product;
+import com.example.starbucksorder.domain.status.CategoryType;
 import com.example.starbucksorder.domain.status.CupSize;
 import com.example.starbucksorder.domain.status.CupType;
+import com.example.starbucksorder.exception.coustomexception.AlreadyExistException;
+import com.example.starbucksorder.service.impl.CategoryServiceImpl;
 import com.example.starbucksorder.service.impl.OptionServiceImpl;
+import com.example.starbucksorder.service.impl.ProductServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +31,38 @@ public class ServiceTest {
 
     @Autowired
     OptionServiceImpl optionService;
+
+    @Autowired
+    ProductServiceImpl productService;
+
+    @Autowired
+    CategoryServiceImpl categoryService;
+
+    @Test(expected = AlreadyExistException.class)
+    public void productServiceEx(){
+
+        Category category = new Category();
+        category.setName("커피");
+        category.setCategoryType(CategoryType.음료);
+        categoryService.addCategory(category);
+
+
+        Product product1 = new Product();
+        Product product2 = new Product();
+
+        product1.setName("아메");
+        product2.setName("아메");
+
+        productService.addProduct(product1,"커피");
+
+        Product product = productService.findProduct(product1.getId());
+
+        assertThat(product.getName(),is("아메"));
+
+        productService.addProduct(product2,"커피");
+
+    }
+
 
 
     @Test
