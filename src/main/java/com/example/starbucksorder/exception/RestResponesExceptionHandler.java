@@ -2,11 +2,9 @@ package com.example.starbucksorder.exception;
 
 import com.example.starbucksorder.exception.coustomexception.AlreadyExistException;
 import com.example.starbucksorder.exception.coustomexception.EntityNotFoundException;
-import com.example.starbucksorder.exception.model.ResponseMsg;
 import com.example.starbucksorder.vo.ResponseVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
