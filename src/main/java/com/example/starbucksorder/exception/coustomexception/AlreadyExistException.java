@@ -1,7 +1,10 @@
 package com.example.starbucksorder.exception.coustomexception;
 
-public class AlreadyExistException extends RuntimeException {
+import com.example.starbucksorder.exception.BaseException;
+
+public class AlreadyExistException extends BaseException {
+
     public AlreadyExistException(String msg){
-        super(msg);
+        super(400,msg);
     }
 }

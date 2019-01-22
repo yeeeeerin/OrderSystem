@@ -6,14 +6,14 @@ import lombok.Data;
 @Data
 public class ResponseVO<T> {
 
-    int code;
+    int status;
 
     String message;
 
     T response;
 
-    public ResponseVO(int code,String message){
-        this.code = code;
+    public ResponseVO(int status,String message){
+        this.status = status;
         this.message = message;
     }
 }

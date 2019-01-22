@@ -1,7 +1,9 @@
 package com.example.starbucksorder.exception.coustomexception;
 
-public class EntityNotFoundException extends RuntimeException {
+import com.example.starbucksorder.exception.BaseException;
+
+public class EntityNotFoundException extends BaseException {
     public EntityNotFoundException(String msg){
-        super(msg);
+        super(401,msg);
     }
 }
