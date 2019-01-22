@@ -7,7 +7,7 @@ public interface OnOrderService {
     /*
     * 주문
     * */
-    void order(Long userId, OrderDto orderDto);
+    void order(OrderDto orderDto);
 
     /*
     * 주문 취소

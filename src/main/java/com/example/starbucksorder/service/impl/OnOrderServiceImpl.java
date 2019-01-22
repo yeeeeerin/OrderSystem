@@ -43,9 +43,9 @@ public class OnOrderServiceImpl implements OnOrderService {
     * */
     @Override
     @Transactional
-    public void order(Long userId, OrderDto orderDto) {
+    public void order(OrderDto orderDto) {
 
-        User user = userRepository.findById(userId).get();
+        User user = userRepository.findById(orderDto.getUser().getId()).get();
 
         OnOrder onOrder = new OnOrder();
         onOrder.setOrderStatus(OrderStatus.WAITING_CONFIEM);

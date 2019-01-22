@@ -15,7 +15,6 @@ public class UserController {
 
 
     @PostMapping(path = "/join",headers = {"Content-type=application/json"})
-    @ResponseBody
     public ResponseVO join(@RequestBody User user){
 
         userService.addUser(user);
