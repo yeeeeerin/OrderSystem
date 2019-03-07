@@ -3,7 +3,7 @@ package com.example.starbucksorder.exception.model;
 public class ResponseMsg {
     private String message;
 
-    public ResponseMsg(String msg){
+    public ResponseMsg(String msg) {
         this.message = msg;
     }
 

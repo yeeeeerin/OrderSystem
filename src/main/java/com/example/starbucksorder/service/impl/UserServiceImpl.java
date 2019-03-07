@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     public void addUser(User user) {
 
         Optional<User> userOptional = userRepository.findByName(user.getName());
-        if(!userOptional.isEmpty()){
+        if (!userOptional.isEmpty()) {
             //이미 있는 회원인지 아닌지 확인
             throw new AlreadyExistException("이미 존재하는 회원입니다");
         }

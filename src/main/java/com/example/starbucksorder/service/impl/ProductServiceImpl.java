@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
     CategoryRepository categoryRepository;
 
     @Override
-    public void addProduct(Product product,String categoryName) {
+    public void addProduct(Product product, String categoryName) {
 
         Optional<Product> optionalProduct = productRepository.findByName(product.getName());
 

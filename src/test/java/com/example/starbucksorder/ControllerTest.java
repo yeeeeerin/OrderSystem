@@ -39,8 +39,8 @@ public class ControllerTest {
 
 
         mockMvc.perform(post("/user/join")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(json))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
                 .andExpect(
                         //MvcResult를 받아 실행
                         (result) -> assertTrue(result.getResolvedException().getClass().isAssignableFrom(AlreadyExistException.class))
@@ -54,8 +54,6 @@ public class ControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(object);
     }
-
-
 
 
 }

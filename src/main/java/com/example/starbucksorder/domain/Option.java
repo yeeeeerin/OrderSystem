@@ -19,7 +19,6 @@ public class Option {
     @Id
     Long id;
 
-    @Column
     Integer price;
 
     @Enumerated(EnumType.STRING)
@@ -27,6 +26,7 @@ public class Option {
 
     @Enumerated(EnumType.STRING)
     CupSize cupSize;
+
 
 
 

@@ -20,7 +20,7 @@ public class UserCurdTest {
     UserServiceImpl userServiceimpl;
 
     @Test
-    public void userAdd(){
+    public void userAdd() {
 
         User user = new User();
         user.setName("yeerin");
@@ -29,13 +29,13 @@ public class UserCurdTest {
 
         User user1 = userServiceimpl.findUser("yeerin");
 
-        assertThat(user1.getName(),is("yeerin"));
+        assertThat(user1.getName(), is("yeerin"));
 
         userServiceimpl.removeUser(user1.getId());
     }
 
     @Test(expected = AlreadyExistException.class)
-    public void userAddFail(){
+    public void userAddFail() {
         User user1 = new User();
 
         user1.setName("yerrin");

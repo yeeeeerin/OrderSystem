@@ -24,29 +24,29 @@ public class OptionServiceImpl implements OptionService {
 
 
     /*
-    * 퍼스널 옵션과 옵션의 저장을 함께 수행
-    * */
+     * 퍼스널 옵션과 옵션의 저장을 함께 수행
+     * */
     @Override
-    public void createOption(List<PersonalOption> personalOptions,Option option) {
+    public void createOption(List<PersonalOption> personalOptions, Option option) {
 
         option.setPrice(calAmount(personalOptions));
 
         optionRepository.save(option);
 
-        personalOptionService.addPersonalOption(personalOptions,option);
+        personalOptionService.addPersonalOption(personalOptions, option);
 
     }
 
     /*
-    *
-    * 옵션들의 총 금액을 계산
-    * */
-    private Integer calAmount(List<PersonalOption> personalOptions){
+     *
+     * 옵션들의 총 금액을 계산
+     * */
+    private Integer calAmount(List<PersonalOption> personalOptions) {
 
         Integer amount = 0;
 
-        for(PersonalOption p : personalOptions){
-            amount += p.getCount()*500;
+        for (PersonalOption p : personalOptions) {
+            amount += p.getCount() * 500;
         }
 
         return amount;
@@ -54,7 +54,7 @@ public class OptionServiceImpl implements OptionService {
     }
 
     @Override
-    public Option findOption(Long id){
+    public Option findOption(Long id) {
 
         return optionRepository.findById(id).get();
 

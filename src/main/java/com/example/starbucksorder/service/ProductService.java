@@ -4,7 +4,7 @@ import com.example.starbucksorder.domain.Product;
 
 public interface ProductService {
 
-    void addProduct(Product product,String category);
+    void addProduct(Product product, String category);
 
     void deleteProduct(Long id);
 

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -14,10 +16,13 @@ public class User {
 
     @Id
     @Column(name = "USER_ID")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "USER_SEQ_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_SEQ_GENERATOR")
     Long id;
 
     @Column(nullable = false, unique = true)
     String name;
+
+    @OneToMany(mappedBy = "id")
+    Set<OnOrder> onOrders = new HashSet<>();
 
 }

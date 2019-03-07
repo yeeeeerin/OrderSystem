@@ -15,7 +15,7 @@ public class PersonalOption {
     Long id;
 
     @Column//(nullable = false)
-    String name;
+            String name;
 
     @Column
     Integer count;

@@ -4,7 +4,7 @@ import com.example.starbucksorder.exception.BaseException;
 
 public class AlreadyExistException extends BaseException {
 
-    public AlreadyExistException(String msg){
-        super(400,msg);
+    public AlreadyExistException(String msg) {
+        super(400, msg);
     }
 }

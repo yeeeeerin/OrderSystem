@@ -23,7 +23,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void addCategory(Category category) {
 
         Optional<Category> categoryOptional = categoryRepository.findByName(category.getName());
-        if(!categoryOptional.isEmpty()){
+        if (!categoryOptional.isEmpty()) {
             throw new AlreadyExistException("같은 이름의 카테고리가 존재합니다");
         }
 

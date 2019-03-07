@@ -24,7 +24,7 @@ public class PersonalOptionServiceImpl implements PersonalOptionService {
     @Override
     public void addPersonalOption(List<PersonalOption> personalOptions, Option option) {
 
-        for(PersonalOption p:personalOptions) {
+        for (PersonalOption p : personalOptions) {
 
             p.setOption(option);
 

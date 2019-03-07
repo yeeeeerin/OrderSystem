@@ -18,13 +18,12 @@ public class OrderController {
 
 
     @PostMapping
-    public ResponseVO addOrder(@RequestBody OrderDto orderDto){
+    public ResponseVO addOrder(@RequestBody OrderDto orderDto) {
 
         onOrderService.order(orderDto);
 
-        return new ResponseVO(200,"order success");
+        return new ResponseVO(200, "order success");
     }
-
 
 
 }

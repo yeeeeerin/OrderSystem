@@ -12,7 +12,7 @@ public class ResponseVO<T> {
 
     T response;
 
-    public ResponseVO(int status,String message){
+    public ResponseVO(int status, String message) {
         this.status = status;
         this.message = message;
     }

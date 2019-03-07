@@ -14,14 +14,14 @@ public class RestResponesExceptionHandler {
 
     @ExceptionHandler(value = EntityNotFoundException.class)
     @ResponseBody
-    public ResponseVO entityNotFoundException(EntityNotFoundException ex){
-        return new ResponseVO(401,ex.getMessage());
+    public ResponseVO entityNotFoundException(EntityNotFoundException ex) {
+        return new ResponseVO(401, ex.getMessage());
     }
 
     @ExceptionHandler(value = AlreadyExistException.class)
     @ResponseBody
-    public ResponseVO entityAlreadyExistException(AlreadyExistException ex){
-        return new ResponseVO(400,ex.getMessage());
+    public ResponseVO entityAlreadyExistException(AlreadyExistException ex) {
+        return new ResponseVO(400, ex.getMessage());
     }
 
 

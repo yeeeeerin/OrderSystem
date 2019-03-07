@@ -8,11 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
 @Data
 public class OrderProduct {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "CART_SEQ_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CART_SEQ_GENERATOR")
     @Id
     Long id;
 

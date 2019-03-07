@@ -39,9 +39,8 @@ public class ServiceTest {
     CategoryServiceImpl categoryService;
 
 
-
     @Test(expected = AlreadyExistException.class)
-    public void productServiceEx(){
+    public void productServiceEx() {
 
         Category category = new Category();
         category.setName("커피");
@@ -55,20 +54,19 @@ public class ServiceTest {
         product1.setName("아메");
         product2.setName("아메");
 
-        productService.addProduct(product1,"커피");
+        productService.addProduct(product1, "커피");
 
         Product product = productService.findProduct(product1.getId());
 
-        assertThat(product.getName(),is("아메"));
+        assertThat(product.getName(), is("아메"));
 
-        productService.addProduct(product2,"커피");
+        productService.addProduct(product2, "커피");
 
     }
 
 
-
     @Test
-    public void optioninsertTest(){
+    public void optioninsertTest() {
         PersonalOption p1 = new PersonalOption();
         PersonalOption p2 = new PersonalOption();
 
@@ -86,15 +84,14 @@ public class ServiceTest {
         option.setCupSize(CupSize.GRANDE);
         option.setCupType(CupType.MUG);
 
-        optionService.createOption(pList,option);
+        optionService.createOption(pList, option);
 
         Option option1 = optionService.findOption(option.getId());
 
-        assertThat(option1.getPrice(),is(3000));
+        assertThat(option1.getPrice(), is(3000));
 
 
     }
-
 
 
 }

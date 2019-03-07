@@ -38,9 +38,9 @@ public class OnOrderServiceImpl implements OnOrderService {
     UserRepository userRepository;
 
     /*
-    * order 메소드에서 모든 주문과 관련된 동작 실행
-    * todo 토큰은 어떻게?;;
-    * */
+     * order 메소드에서 모든 주문과 관련된 동작 실행
+     * todo 토큰은 어떻게?;;
+     * */
     @Override
     @Transactional
     public void order(OrderDto orderDto) {
@@ -52,15 +52,15 @@ public class OnOrderServiceImpl implements OnOrderService {
         onOrder.setPrice(calcAmount(orderDto.getProductDtos()));
         onOrder.setUser(user);
 
-        onOrderRepository.save(onOrder);
+        onOrderRepository.save(onOrder.event());
 
 
-        for(ProductDto productDto:orderDto.getProductDtos()) {
+        for (ProductDto productDto : orderDto.getProductDtos()) {
 
             Product product = productRepository.findByName(productDto.getName()).get();
             Option option = productDto.getOption();
 
-            optionService.createOption(productDto.getPersonalOptions(),option);
+            optionService.createOption(productDto.getPersonalOptions(), option);
             orderProductService.addOrderProduct(onOrder, product, option);
         }
 
@@ -68,16 +68,16 @@ public class OnOrderServiceImpl implements OnOrderService {
     }
 
     /*
-    *
-    * 총 금액을 계산해주는 메소드
-    * */
+     *
+     * 총 금액을 계산해주는 메소드
+     * */
     //@Transactional(readOnly = true)
-    public Integer calcAmount(List<ProductDto> productDtos){
+    public Integer calcAmount(List<ProductDto> productDtos) {
 
         int amount = 0;
 
-        for(ProductDto productDto : productDtos){
-            amount += (productDto.getPrice()*productDto.getCount());
+        for (ProductDto productDto : productDtos) {
+            amount += (productDto.getPrice() * productDto.getCount());
 
             amount += (productDto.getOption().getPrice());
         }

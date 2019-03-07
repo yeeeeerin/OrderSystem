@@ -14,17 +14,14 @@ public class UserController {
     UserService userService;
 
 
-    @PostMapping(path = "/join",headers = {"Content-type=application/json"})
-    public ResponseVO join(@RequestBody User user){
+    @PostMapping(path = "/join", headers = {"Content-type=application/json"})
+    public ResponseVO join(@RequestBody User user) {
 
         userService.addUser(user);
 
-        return new ResponseVO(200,"create");
+        return new ResponseVO(200, "create");
 
     }
-
-
-
 
 
 }
