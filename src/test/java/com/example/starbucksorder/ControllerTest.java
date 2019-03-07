@@ -3,6 +3,7 @@ package com.example.starbucksorder;
 import com.example.starbucksorder.domain.User;
 import com.example.starbucksorder.exception.coustomexception.AlreadyExistException;
 import com.example.starbucksorder.exception.coustomexception.EntityNotFoundException;
+import com.example.starbucksorder.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -14,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -24,6 +27,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
 public class ControllerTest {
+
+    @Autowired
+    UserService userService;
 
     @Autowired
     MockMvc mockMvc;
@@ -43,7 +49,7 @@ public class ControllerTest {
                 .content(json))
                 .andExpect(
                         //MvcResult를 받아 실행
-                        (result) -> assertTrue(result.getResolvedException().getClass().isAssignableFrom(AlreadyExistException.class))
+                        (result) -> assertThat(result.getResolvedException().getClass().getName(),is("harin"))
                 )
                 .andDo(print());
 

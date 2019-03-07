@@ -9,6 +9,8 @@ import org.springframework.data.domain.AbstractAggregateRoot;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -38,7 +40,7 @@ public class OnOrder extends AbstractAggregateRoot {
     User user;
 
     @OneToMany(mappedBy = "id")
-    OrderProduct orderProduct;
+    Set<OrderProduct> orderProduct = new HashSet<>();
 
     public OnOrder event(){
         this.registerEvent(new OrderEvent(this));

@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserService userService;
 
 
-    @PostMapping(path = "/join", headers = {"Content-type=application/json"})
+    @PostMapping("/join")
     public ResponseVO join(@RequestBody User user) {
 
         userService.addUser(user);
